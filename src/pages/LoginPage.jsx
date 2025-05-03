@@ -1,8 +1,12 @@
 import React from 'react'
+import LoginForm from '../components/Auth/LoginForm'
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <div className="centered-container">
+      <h2>Login</h2>
+      <LoginForm />
+    </div>
   )
 }
 
