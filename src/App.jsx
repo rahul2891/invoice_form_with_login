@@ -4,7 +4,7 @@ import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 
 const App = () => {
-  const isLoggedIn = localStorage.getItem('session')
+  const isLoggedIn = localStorage.getItem('session') === 'true';
   return(
    <Router>
     <Routes> 
