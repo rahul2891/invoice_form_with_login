@@ -16,7 +16,8 @@ const LoginForm = () => {
             }}
             onSubmit={(values) => {
                 if (values.username === 'admin' && values.password === 'admin@123') {
-                    localStorage.setItem('session', true);
+                    localStorage.setItem('session', 'true');
+                    console.log('Session set, navigating to /invoice');
                     navigate('/invoice'); 
                 } else {
                     alert('Invalid credentials');
