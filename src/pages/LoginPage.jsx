@@ -2,11 +2,11 @@ import React from 'react'
 import './LoginPage.css'
 import LoginForm from '../components/Auth/LoginForm'
 
-const LoginPage = () => {
+const LoginPage = ({ setIsLoggedIn }) => {
   return (
     <div className="centered-container">
       <h2>Login</h2>
-      <LoginForm />
+      <LoginForm setIsLoggedIn={setIsLoggedIn} />
     </div>
   )
 }
