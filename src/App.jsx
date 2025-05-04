@@ -4,11 +4,22 @@ import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 
 const App = () => {
-  const isLoggedIn = localStorage.getItem('session') === 'true';
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('session') === 'true');
+
+  useEffect(() => {
+    const handleStorageChange = () => {
+      setIsLoggedIn(localStorage.getItem('session') === 'true');
+    };
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, []);
   return(
    <Router>
     <Routes> 
-      <Route path='/login' element={<LoginPage />} />
+      <Route path='/login' element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
       <Route path='/invoice' element={isLoggedIn ? <MainPage /> : <Navigate to="/login" />} />
       <Route path="*" element={<Navigate to={isLoggedIn ? "/invoice" : "/login"} />} />
     </Routes>

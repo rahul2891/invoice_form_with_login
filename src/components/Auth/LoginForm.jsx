@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik';
 import { useNavigate } from 'react-router-dom';
 
-const LoginForm = () => {
+const LoginForm = ({ setIsLoggedIn }) => {
     const navigate = useNavigate();
 
     return (
@@ -17,7 +17,7 @@ const LoginForm = () => {
             onSubmit={(values) => {
                 if (values.username === 'admin' && values.password === 'admin@123') {
                     localStorage.setItem('session', 'true');
-                    console.log('Session set, navigating to /invoice');
+                    setIsLoggedIn(true); 
                     navigate('/invoice'); 
                 } else {
                     alert('Invalid credentials');
