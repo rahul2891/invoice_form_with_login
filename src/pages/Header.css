@@ -1,0 +1,46 @@
+.invoice-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+  }
+  
+  .invoice-header button {
+    margin-right: 1rem;
+    color: #2563eb; /* blue color */
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .invoice-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .invoice-header .tabs {
+    margin-left: auto;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .invoice-header .tabs button {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    color: #4b5563; /* gray color */
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .invoice-header .tabs button.active {
+    border-bottom-color: #2563eb; /* blue color */
+    color: #2563eb; /* blue color */
+  }
+  
+  .invoice-header .tabs button:hover {
+    text-decoration: underline;
+  }
+  

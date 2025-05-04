@@ -1,0 +1,26 @@
+body {
+    background-color: #f9fafb; /* light gray */
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .main-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  @media (min-width: 768px) {
+
+    .main-section {
+
+      grid-template-columns: 1fr 1fr;
+
+      align-items: start; 
+
+    }
+
+  }
+
+  
+
+  
