@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css'
 import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
+import { useEffect, useState } from 'react';
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('session') === 'true');
