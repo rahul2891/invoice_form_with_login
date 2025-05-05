@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../../assets/icon.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import './InvoiceForm.css';
 
 const initialValues = {
   vendor: "",
@@ -32,9 +33,10 @@ const validationSchema = Yup.object({
 });
 
 const InvoiceForm = () => {
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, {setSubmitting}) => {
     localStorage.setItem("invoiceFormData", JSON.stringify(values));
     alert("Form submitted and saved to localStorage!");
+    setSubmitting(false);
   };
 
   return (
@@ -52,6 +54,10 @@ const InvoiceForm = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
+        {({ errors, touched }) => {
+    console.log("Errors:", errors);
+    console.log("Touched:", touched);
+    return (
         <Form style={{ width: "100%" }} className="form">
           <div
             style={{
@@ -605,6 +611,8 @@ const InvoiceForm = () => {
             </div>
           </div>
         </Form>
+         );
+        }}
       </Formik>
     </div>
   );
